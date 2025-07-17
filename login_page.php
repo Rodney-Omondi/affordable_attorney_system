@@ -45,10 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($role === "USER") {
                 header("Location: user_dashboard.php"); exit();
-            } elseif ($role === "ATTORNEY") {
-                header("Location: attorney_dashboard.php"); exit();
-            } elseif ($role === "ADMIN") {
-                header("Location: admin_dashboard.php"); exit();
+            } elseif ($role === "PRO BONO LAWYER") {
+                header("Location: pro_bono_lwayer_dashboard.php"); exit();
+            } elseif ($role === "CELL WARDEN") {
+                header("Location: cell_warden_dashboard.php"); exit();
             } else {
                 echo " Invalid role in DB.";
             }
