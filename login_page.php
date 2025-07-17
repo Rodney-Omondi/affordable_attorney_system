@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // 2. Confirm database connection
     if (!$conn) {
-        die("❌ Database connection failed: " . mysqli_connect_error());
+        die(" Database connection failed: " . mysqli_connect_error());
     }
 
     // 3. Check current database
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {
-        die("❌ SQL Error: " . mysqli_error($conn));
+        die(" SQL Error: " . mysqli_error($conn));
     }
 
     $num = mysqli_num_rows($result);
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $role = strtoupper($row['user_type']);
 
-            echo "<p>✅ Logged in as: $role</p>";
+            echo "<p> Logged in as: $role</p>";
 
             if ($role === "USER") {
                 header("Location: user_dashboard.php"); exit();
@@ -50,10 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } elseif ($role === "ADMIN") {
                 header("Location: admin_dashboard.php"); exit();
             } else {
-                echo "⚠️ Invalid role in DB.";
+                echo " Invalid role in DB.";
             }
         } else {
-            echo "❌ Incorrect password.";
+            echo " Incorrect password.";
         }
     } else {
         echo "❌ User not found with that email.";
