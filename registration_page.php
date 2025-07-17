@@ -28,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO users (email, password, full_name, user_type) 
                 VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'), 'USER')";
     } elseif ($role == "PRO_BONO_LAWYER") {
-        $sql = "INSERT INTO attorneys (email, password, full_name) 
+        $sql = "INSERT INTO pro bono lawyer (email, password, full_name) 
                 VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'))";
     } elseif ($role == "CELL_WARDEN") {
-        $sql = "INSERT INTO admins (email, password, full_name) 
+        $sql = "INSERT INTO cell warden (email, password, full_name) 
                 VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'))";
     } else {
         die("Invalid role selected.");
