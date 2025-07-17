@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo " Incorrect password.";
         }
     } else {
-        echo "❌ User not found with that email.";
+        echo " User not found with that email.";
     }
 }
 ?>
