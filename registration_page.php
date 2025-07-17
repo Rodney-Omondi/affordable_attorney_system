@@ -27,12 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($role == "USER") {
         $sql = "INSERT INTO users (email, password, full_name, user_type) 
                 VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'), 'USER')";
-    } elseif ($role == "PRO_BONO_LAWYER") {
-        $sql = "INSERT INTO pro bono lawyer (email, password, full_name) 
-                VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'))";
-    } elseif ($role == "CELL_WARDEN") {
-        $sql = "INSERT INTO cell warden (email, password, full_name) 
-                VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'))";
+    } elseif ($role == "PRO BONO LAWYER") {
+        $sql = "INSERT INTO pro_bono_lawyer (email, password, full_name, user_type) 
+                VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'), 'PRO BONO LAWYER')";
+    } elseif ($role == "CELL WARDEN") {
+        $sql = "INSERT INTO cell_warden (email, password, full_name, user_type) 
+                VALUES ('$email', '$password', CONCAT('$first_name', ' ', '$second_name'), 'CELL WARDEN')";
     } else {
         die("Invalid role selected.");
     }
